@@ -1,11 +1,3 @@
-if you wanted all `h2` elements to be red, you would add a style rule that looks like this:
-
-```
-<style>
-  h2 {color: red;}
-</style>
-```
-
 ## Variables
 
 DEFINITION: `--var_name: value`  
@@ -98,18 +90,31 @@ order of CSS style precedence:
 - id declaration
 - class declaration
 
-# Colors
+## Colors
 
-## Hex Color System
+### Hex Color System
 
 __6-DIGITS__: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
 SO #FF0000 is 100% red. #00FF00 is 100% green.
 
 __3-DIGITS__: #F00 is red, #00F is blue (much fewer options)
 
-## RGB functions
+### RGB functions
 
 - rgb( [amt red] , [amt green] , [amt blue] )
 - rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])
 
+## Relative Positioning
 
+CSS treats each HTML element as its own box, which is usually referred to as the **CSS Box Model**
+- Block-level items automatically start on a new line (think headings, paragraphs, and divs)
+- inline items sit within surrounding content (like images or spans)
+- this default layout of elements in this way is called the **normal flow** of a document, but CSS offers the position property to override it.
+
+- `relative` - allows you to specify how CSS should move it relative to its current position in the normal flow of the page
+  - set properites like `bottom`, `top`, `left`, `right`
+  - changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item __were in its default position__.
+- `absolute` - locks the element in place relative to its parent container
+  - unlike the relative position, this removes the element from the normal flow of the document, so surrounding items __ignore it__.
+  - can also apply offsets to this
+- `fixed` - a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer "realize" where it is positioned, which may require some layout adjustments elsewhere.
