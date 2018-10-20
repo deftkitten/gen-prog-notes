@@ -28,3 +28,14 @@ can apply multiple classes to one element
 - `width`
 - `border-color`, `border-width`, `border-style` (dotted, solid, dotted solid, etc.), `border-radius` (%, px)
 - `background-color`
+- `padding` - controls the amount of space between the element's content and its border
+  - `padding-top`, `padding-right`, `padding-left`, `padding-bottom`
+- `margin` - controls the amount of space between an element's border and surrounding elements; if you set an element's margin to a negative value, the element will grow larger.
+- `border`
+
+## CSS Selectors
+
+- `.class`
+- `#id`
+- `*` select all elements
+- `element` like p, h2 (select all p's, select all h2's)
