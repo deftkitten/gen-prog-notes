@@ -6,6 +6,12 @@ if you wanted all `h2` elements to be red, you would add a style rule that looks
 </style>
 ```
 
+## Variables
+
+DEFINITION: `--var_name: value`  
+TO ASSIGN: `...: var(var_name, fallback);
+
+
 **Classes** are reusable styles that can be added to HTML elements.
 
 defined like:
@@ -43,13 +49,36 @@ can apply multiple classes to one element
 - `*` select all elements
 - `element` like p, h2 (select all p's, select all h2's)
 - attribute selectors - this selector matches and styles elements with a specific attribute value
-```
-[type='radio'] {
-  margin: 20px 0px 20px 0px;
-}
-```
+  ```
+  [type='radio'] {
+    margin: 20px 0px 20px 0px;
+  }
+  ```
+- `:root` 
+  You can think of the :root element as a container for your entire HTML document, in the same way that an html element is a container for the body element.  
+  By creating your variables in :root, they will be available throughout the whole web page.
 
 ## Units
 
 **Absolute** units (like px and inches) are approximated lengths given a screen's resolution
 **Relative** units (em based on the size of the font)
+
+
+order of CSS style precedence:
+- `!importatnt`
+- in-line style
+- id declaration
+- class declaration
+
+# Colors
+
+## Hex Color System
+
+6-DIGITS: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
+SO #FF0000 is 100% red. #00FF00 is 100% green.
+
+3-DIGITS: #F00 is red, #00F is blue (much fewer options)
+
+## rgb() function
+
+rgb( [amt red] , [amt green] , [amt blue] )
