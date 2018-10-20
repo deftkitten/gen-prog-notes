@@ -1,23 +1,22 @@
 ## Variables
 
 DEFINITION: `--var_name: value`  
-TO ASSIGN: `thing_to_set: var(var_name, fallback);`
+ASSIGNMENT: `thing_to_set: var(var_name, fallback);`
 
 
 ## Classes  
 reusable styles that can be added to HTML elements.
 
-defined like:
+DEFINITION:
 ```
-.blue-text {
+.myClass {
     color: blue;
   }
 ```
 
-then applied like:
-`<h2 class="blue-text">CatPhotoApp</h2>`
+ASSIGNMENT: `<h2 class="blue-text">CatPhotoApp</h2>`
 
-can apply multiple classes to one element
+\*Note: can apply multiple classes to one element
 
 ## CSS Properties
 
@@ -61,7 +60,7 @@ can apply multiple classes to one element
 - `.class`
 - `#id`
 - `*` select all elements
-- the element itself like `p`, `h2` (select all p's, select all h2's)
+- the elements themselves like `p`, `h2` (selects all p's, selects all h2's)
 - attribute - this selector matches and styles elements with a specific attribute value
   ```
   [type='radio'] {
@@ -83,26 +82,54 @@ can apply multiple classes to one element
 **Absolute** units (like px and inches) are approximated lengths given a screen's resolution
 **Relative** units (em based on the size of the font)
 
-
-order of CSS style precedence:
-- `!importatnt`
-- in-line style
-- id declaration
-- class declaration
+Order of CSS style precedence:
+1. `!importatnt`
+2. in-line style
+3. id declaration
+4. class declaration
 
 ## Colors
 
 ### Hex Color System
 
-__6-DIGITS__: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
-SO #FF0000 is 100% red. #00FF00 is 100% green.
+**6-DIGITS**: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
+EXAMPLES: #FF0000 is 100% red, #00FF00 is 100% green.
 
-__3-DIGITS__: #F00 is red, #00F is blue (much fewer options)
+**3-DIGITS**: #000 -> only one digit per color, so much fewer options
+EXAMPLES: #F00 is red, #00F is blue
 
 ### RGB functions
 
-- rgb( [amt red] , [amt green] , [amt blue] )
-- rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])
+**Regular**
+SYNTAX: `rgb( [amt red] , [amt green] , [amt blue] )`
+EXAMPLE: `rcb(244, 14, 0)`
+
+**With Defined Opacity**
+SYNTAX: `rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])`
+EXAMPLE: `rgba(15, 23, 250, 40%)`
+
+### HSL function
+
+SYNTAX: `hsl( [hue], [saturation], [lightness] )`
+  - **hue** is the color itself, ranging from 0-360 in degrees on the color wheel
+  - **saturation** - amount of gray
+  - **lightness** - amount of white or black - ranging from 0% (black) to 100% (white), where 50% is the normal color
+EXAMPLES:
+    
+|Color	|HSL|
+|---|---|
+|red	|`hsl(0, 100%, 50%)`|
+|yellow	|`hsl(60, 100%, 50%)`|
+|green	|`hsl(120, 100%, 50%)`|
+|cyan	|`hsl(180, 100%, 50%)`|
+|blue	|`hsl(240, 100%, 50%)`|
+|magenta	|`hsl(300, 100%, 50%)`|
+
+### Gradients
+
+SYNTAX: `background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...)`
+EXAMPLE: `background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`
+\*Note: MUST use the background property here
 
 ## Positioning
 
@@ -111,6 +138,7 @@ CSS treats each HTML element as its own box, which is usually referred to as the
 - inline items sit within surrounding content (like images or spans)
 - this default layout of elements in this way is called the **normal flow** of a document, but CSS offers the position property to override it.
 
+ASSIGMENTS:
 - `relative` - allows you to specify how CSS should move it relative to its current position in the normal flow of the page
   - set properites like `bottom`, `top`, `left`, `right`
   - changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item __were in its default position__.
