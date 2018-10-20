@@ -84,3 +84,6 @@ every HTML document has a `body` element
 ## ID Attribute
 id attributes should be UNIQUE, as they are used by javascript and to select specific elements in CSS
 `<h2 id="cat-photo-app">`
+
+class declarations take precedence according to chronological order  
+id declarations override class declarations
