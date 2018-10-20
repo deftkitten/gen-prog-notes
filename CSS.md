@@ -12,7 +12,8 @@ DEFINITION: `--var_name: value`
 TO ASSIGN: `...: var(var_name, fallback);
 
 
-**Classes** are reusable styles that can be added to HTML elements.
+## Classes  
+reusable styles that can be added to HTML elements.
 
 defined like:
 ```
@@ -31,7 +32,7 @@ can apply multiple classes to one element
 - `font-size:` 12 px  
 - `font-family: FAMILY_NAME, GENERIC_NAME;` so something like 'Helvetica; sans-serif"  
 (to import a Google font: '<link href="https://fonts.googleapis.com/css?family=FONT_NAME" rel="stylesheet" type="text/css">')
-- `width`
+- `font-weight` (normal, bold, bolder, lighter, [weight value 100-900, 700 is ordinary bold] )
 - `border-color`, `border-width`, `border-style` (dotted, solid, dotted solid, etc.), `border-radius` (%, px)
 - `background-color`
 - `padding` - controls the amount of space between the element's content and its border
@@ -41,6 +42,8 @@ can apply multiple classes to one element
   - `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`
   - `margin: 10px 20px 10px 20px;` (top right bottom left)
 - `border`
+- `text-align` (justify, center, right, left)
+- `width` and `height` (relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element)
 
 ## CSS Selectors
 
