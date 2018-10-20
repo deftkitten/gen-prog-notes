@@ -10,6 +10,8 @@
 
 - `<!--`  comment here    `-->`
 
+- `<head>` this is NOT a header, metadata elements, such as `link`, `meta`, `title`, and `style` typically go inside the head element.
+
 ## Sub-Elements
 
 **image** - `<img src="url" alt="alt text">`
@@ -67,3 +69,13 @@ Form with radio buttons, checkboxes, required text inputs, and pre-checked items
   
 The div element, also known as a division element, is a general purpose container for other elements.
 `<div> ... </div>`
+
+# Basic Page Structure
+
+DOCTYPE tells the browser which version of HTML you're using
+```
+<!DOCTYPE html>
+<html>
+  <!-- Your HTML code goes here -->
+</html>
+```
