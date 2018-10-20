@@ -48,22 +48,43 @@ can apply multiple classes to one element
 - `width` and `height` (relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element)
 - `text-decoration` underline (inline-equivalent is `<u>`), overline, line-through (inline equivalent is `<s>`)
   - CAN combine these, like `text-decoration: overline red wavy`
+- `box-shadow` (applies to `<div>` objects), parameters are `offset-x, offset-y, blur-radius, spread-radius, color`
+  - where blur-radius, spread-radius, and color are optional
+- `opacity` - 0 (transparent) to 1 (opaque)
+- `text-transform`
+
+|Value|Result|
+|---|---|
+|lowercase|"transform me"|
+|uppercase|"TRANSFORM ME"|
+|capitalize|"Transform Me"|
+|initial|use default value|
+|inherit|use text-transform value inherited from parent|
+|none|original text|
+
+- `line-height`
 
 ## CSS Selectors
 
 - `.class`
 - `#id`
 - `*` select all elements
-- `element` like p, h2 (select all p's, select all h2's)
-- attribute selectors - this selector matches and styles elements with a specific attribute value
+- the element itself like `p`, `h2` (select all p's, select all h2's)
+- attribute - this selector matches and styles elements with a specific attribute value
   ```
   [type='radio'] {
     margin: 20px 0px 20px 0px;
   }
   ```
-- `:root` 
-  You can think of the :root element as a container for your entire HTML document, in the same way that an html element is a container for the body element.  
-  By creating your variables in :root, they will be available throughout the whole web page.
+- `:root` - acts as a container for your entire HTML document, in the same way that an html element is a container for the body element.  
+  - By creating your variables in :root, they will be available throughout the whole web page.
+- pseudo-class - keyword that can be added to selectors, in order to select a specific state of the element.
+  - for example, the styling of an anchor tag can be changed for its hover state using the :hover pseudo-class selector  
+  ```
+  a:hover {
+  color: red;
+  }
+  ```
 
 ## Units
 
@@ -81,11 +102,14 @@ order of CSS style precedence:
 
 ## Hex Color System
 
-6-DIGITS: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
+__6-DIGITS__: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
 SO #FF0000 is 100% red. #00FF00 is 100% green.
 
-3-DIGITS: #F00 is red, #00F is blue (much fewer options)
+__3-DIGITS__: #F00 is red, #00F is blue (much fewer options)
 
-## rgb() function
+## RGB functions
 
-rgb( [amt red] , [amt green] , [amt blue] )
+- rgb( [amt red] , [amt green] , [amt blue] )
+- rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])
+
+
