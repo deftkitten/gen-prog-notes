@@ -83,7 +83,7 @@ ASSIGNMENT: `<h2 class="blue-text">CatPhotoApp</h2>`
 **Relative** units (em based on the size of the font)
 
 Order of CSS style precedence:
-1. `!importatnt`
+1. `!important`
 2. in-line style
 3. id declaration
 4. class declaration
@@ -92,20 +92,22 @@ Order of CSS style precedence:
 
 ### Hex Color System
 
-**6-DIGITS**: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
+__6-DIGITS:__  
+#000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
 EXAMPLES: #FF0000 is 100% red, #00FF00 is 100% green.
 
-**3-DIGITS**: #000 -> only one digit per color, so much fewer options
+__3-DIGITS:__ 
+#000 -> only one digit per color, so much fewer options  
 EXAMPLES: #F00 is red, #00F is blue
 
 ### RGB functions
 
-**Regular**
-SYNTAX: `rgb( [amt red] , [amt green] , [amt blue] )`
+**Regular**  
+SYNTAX: `rgb( [amt red] , [amt green] , [amt blue] )`  
 EXAMPLE: `rcb(244, 14, 0)`
 
-**With Defined Opacity**
-SYNTAX: `rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])`
+**With Defined Opacity**  
+SYNTAX: `rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])`  
 EXAMPLE: `rgba(15, 23, 250, 40%)`
 
 ### HSL function
@@ -113,7 +115,8 @@ EXAMPLE: `rgba(15, 23, 250, 40%)`
 SYNTAX: `hsl( [hue], [saturation], [lightness] )`
   - **hue** is the color itself, ranging from 0-360 in degrees on the color wheel
   - **saturation** - amount of gray
-  - **lightness** - amount of white or black - ranging from 0% (black) to 100% (white), where 50% is the normal color
+  - **lightness** - amount of white or black - ranging from 0% (black) to 100% (white), where 50% is the normal color  
+
 EXAMPLES:
     
 |Color	|HSL|
@@ -127,8 +130,8 @@ EXAMPLES:
 
 ### Gradients
 
-SYNTAX: `background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...)`
-EXAMPLE: `background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`
+SYNTAX: `background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...)`  
+EXAMPLE: `background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`  
 \*Note: MUST use the background property here
 
 ## Positioning
