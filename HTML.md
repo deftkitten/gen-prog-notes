@@ -87,3 +87,10 @@ id attributes should be UNIQUE, as they are used by javascript and to select spe
 
 class declarations take precedence according to chronological order  
 id declarations override class declarations
+
+## Body Elements
+
+| element | purpose | CSS equivalent|
+|---|---|---|
+|`<strong>`|bold|font-style: bold\
+|`<hr>`|separation line|none|
