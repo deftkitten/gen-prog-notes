@@ -79,6 +79,7 @@ DOCTYPE tells the browser which version of HTML you're using
   <!-- Your HTML code goes here -->
 </html>
 ```
+every HTML document has a `body` element
 
 ## ID Attribute
 id attributes should be UNIQUE, as they are used by javascript and to select specific elements in CSS
