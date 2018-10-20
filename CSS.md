@@ -1,7 +1,7 @@
 ## Variables
 
 DEFINITION: `--var_name: value`  
-TO ASSIGN: `...: var(var_name, fallback);
+TO ASSIGN: `thing_to_set: var(var_name, fallback);`
 
 
 ## Classes  
@@ -129,5 +129,3 @@ CSS treats each HTML element as its own box, which is usually referred to as the
 When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another
   - must be an integer (i.e. a whole number and not a decimal)
   - higher values for the z-index property of an element move it higher in the stack than those with lower values.
-
-
