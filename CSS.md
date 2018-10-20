@@ -30,7 +30,10 @@ can apply multiple classes to one element
 - `background-color`
 - `padding` - controls the amount of space between the element's content and its border
   - `padding-top`, `padding-right`, `padding-left`, `padding-bottom`
-- `margin` - controls the amount of space between an element's border and surrounding elements; if you set an element's margin to a negative value, the element will grow larger.
+  - `padding: 10px 20px 10px 20px;` (top right bottom left)
+- `margin` - controls the amount of space between an element's border and surrounding elements; if you set an element's margin to a negative value, the element will grow larger
+  - `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`
+  - `margin: 10px 20px 10px 20px;` (top right bottom left)
 - `border`
 
 ## CSS Selectors
@@ -39,3 +42,14 @@ can apply multiple classes to one element
 - `#id`
 - `*` select all elements
 - `element` like p, h2 (select all p's, select all h2's)
+- attribute selectors - this selector matches and styles elements with a specific attribute value
+```
+[type='radio'] {
+  margin: 20px 0px 20px 0px;
+}
+```
+
+## Units
+
+**Absolute** units (like px and inches) are approximated lengths given a screen's resolution
+**Relative** units (em based on the size of the font)
