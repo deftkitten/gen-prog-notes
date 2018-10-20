@@ -33,6 +33,8 @@ can apply multiple classes to one element
 - `font-family: FAMILY_NAME, GENERIC_NAME;` so something like 'Helvetica; sans-serif"  
 (to import a Google font: '<link href="https://fonts.googleapis.com/css?family=FONT_NAME" rel="stylesheet" type="text/css">')
 - `font-weight` (normal, bold, bolder, lighter, [weight value 100-900, 700 is ordinary bold] )
+  - inline-equivalent of bold is <strong>text</strong>
+- `font-style` (italic (inline equivalent is `<em>`)
 - `border-color`, `border-width`, `border-style` (dotted, solid, dotted solid, etc.), `border-radius` (%, px)
 - `background-color`
 - `padding` - controls the amount of space between the element's content and its border
@@ -44,6 +46,8 @@ can apply multiple classes to one element
 - `border`
 - `text-align` (justify, center, right, left)
 - `width` and `height` (relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element)
+- `text-decoration` underline (inline-equivalent is `<u>`), overline, line-through (inline equivalent is `<s>`)
+  - CAN combine these, like `text-decoration: overline red wavy`
 
 ## CSS Selectors
 
