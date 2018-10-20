@@ -1,8 +1,13 @@
+# Basic CSS
+
 ## Variables
 
 DEFINITION: `--var_name: value`  
 ASSIGNMENT: `thing_to_set: var(var_name, fallback);`
 
+## Pseudo-Elements
+
+`::before` and `::after` - used to add something before or after a selected element
 
 ## Classes  
 reusable styles that can be added to HTML elements.
@@ -54,6 +59,10 @@ ASSIGNMENT: `<h2 class="blue-text">CatPhotoApp</h2>`
 |none|original text|
 
 - `line-height`
+- `transform: [operation as follows:]`
+  - `scale( [scale_factor] )` - handy for `:hover:` conditions bc it makes the hovered item bigger, smaller, etc.
+  - `skewX( [skew factor in degrees] )` - must be in degrees
+  - `skewY( [skew factor in degrees] )`
 
 ## CSS Selectors
 
@@ -88,15 +97,20 @@ Order of CSS style precedence:
 3. id declaration
 4. class declaration
 
+## Pattern Backgrounds
+
+SYNTAX: `background: url( [url] );`  
+EXAMPLE: `background: url(https://i.imgur.com/MJAkxbh.png);`  
+
 ## Colors
 
-### Hex Color System
+### Hex Color System  
 
 __6-DIGITS:__  
 #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
 EXAMPLES: #FF0000 is 100% red, #00FF00 is 100% green.
 
-__3-DIGITS:__ 
+__3-DIGITS:__  
 #000 -> only one digit per color, so much fewer options  
 EXAMPLES: #F00 is red, #00F is blue
 
@@ -130,9 +144,14 @@ EXAMPLES:
 
 ### Gradients
 
+**Regular Gradient**  
 SYNTAX: `background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...)`  
 EXAMPLE: `background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`  
 \*Note: MUST use the background property here
+
+**Repeating Gradient**  
+SYNTAX: `background: repeating-linear-gradient(grad_direction, color stop_location, color stop_location, ...)`  
+EXAMPLE: `background: repeating-linear-gradient(90deg, yellow 0px, blue 40px, green 40px, red 80px);` 
 
 ## Positioning
 
@@ -160,3 +179,70 @@ ASSIGMENTS:
 When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another
   - must be an integer (i.e. a whole number and not a decimal)
   - higher values for the z-index property of an element move it higher in the stack than those with lower values.
+
+## Animation
+
+The animation properties control how the animation should behave and the @keyframes rule controls what happens during that animation. There are eight animation properties in total:
+- animation-name
+- animation-duration  
+
+**@keyframes** is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific "frames" during the animation, with percentages ranging from 0% to 100%
+
+EXAMPLE:  
+```
+#anim { 
+  animation-name: colorful;
+  animation-duration: 3s;
+}
+@keyframes colorful {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+```
+
+\*Note: #anim is simply an id reference
+
+### Fill Mode of an Animation  
+
+`animation-fill-mode: forwards` sets the final style of the element to the final stage of the animation (rather than reverting to first state)
+
+### Creating Movement  
+
+when `position` is defined, such as `fixed` or `relative`, the CSS offset properties `right`, `left`, `top`, and `bottom` can be used in animation rules to create movement.
+
+```
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+  }
+}
+```  
+
+### Animation Properties  
+
+- `animation-iteration-count` - set to `infinite` if want perpetual animation
+- `animation-timing-function` - controls how quickly an animated element changes over the duration of the animation
+  - `ease` - which starts slow, speeds up in the middle, and then slows down again in the end
+  - `ease-out` - which is quick in the beginning then slows down
+  - `ease-in` - which is slow in the beginning, then speeds up at the end
+  - `linear` - which applies a constant animation speed throughout.
+- **Bezier Curve** - The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X-axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y-axis is the change in the animation.
+  - set `animation-timing-function` to `cubic-bezier( pt1_x, pt1_y, pt2_x, pt2_y)`
+  - `cubic-bezier( .25, .25, .75, .75)` is linear  
+  
+  
+# Applied Accessibility
+
