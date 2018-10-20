@@ -23,7 +23,8 @@ can apply multiple classes to one element
 ## CSS Properties
 
 - `font-size:` 12 px  
-- 'font-family: FAMILY_NAME, GENERIC_NAME;' so something like 'Helvetica; sans-serif"  
+- `font-family: FAMILY_NAME, GENERIC_NAME;` so something like 'Helvetica; sans-serif"  
 (to import a Google font: '<link href="https://fonts.googleapis.com/css?family=FONT_NAME" rel="stylesheet" type="text/css">')
 - `width`
-- `border-color`, `border-width`, `border-style`, `border-radius`
+- `border-color`, `border-width`, `border-style` (dotted, solid, dotted solid, etc.), `border-radius` (%, px)
+- `background-color`
