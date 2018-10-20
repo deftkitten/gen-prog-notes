@@ -70,7 +70,7 @@ Form with radio buttons, checkboxes, required text inputs, and pre-checked items
 The div element, also known as a division element, is a general purpose container for other elements.
 `<div> ... </div>`
 
-# Basic Page Structure
+## Basic Page Structure
 
 DOCTYPE tells the browser which version of HTML you're using
 ```
@@ -79,3 +79,7 @@ DOCTYPE tells the browser which version of HTML you're using
   <!-- Your HTML code goes here -->
 </html>
 ```
+
+## ID Attribute
+id attributes should be UNIQUE, as they are used by javascript and to select specific elements in CSS
+`<h2 id="cat-photo-app">`
