@@ -104,7 +104,7 @@ __3-DIGITS__: #F00 is red, #00F is blue (much fewer options)
 - rgb( [amt red] , [amt green] , [amt blue] )
 - rbga( [amt red] , [amt green] , [amt blue] , [amt opacity])
 
-## Relative Positioning
+## Positioning
 
 CSS treats each HTML element as its own box, which is usually referred to as the **CSS Box Model**
 - Block-level items automatically start on a new line (think headings, paragraphs, and divs)
@@ -118,3 +118,16 @@ CSS treats each HTML element as its own box, which is usually referred to as the
   - unlike the relative position, this removes the element from the normal flow of the document, so surrounding items __ignore it__.
   - can also apply offsets to this
 - `fixed` - a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer "realize" where it is positioned, which may require some layout adjustments elsewhere.
+- `float` - this is NOT set with `position`, specified like `float: left`
+  - removed from the normal flow of a document and pushed to either the left or right of their containing parent element
+  - commonly used with the width property to specify how much horizontal space the floated element requires.
+- center a block element horizontally. One way to do this is to set its `margin` to a value of `auto`.
+  - this method works for images, too -> images are inline elements by default, but can be changed to block elements when you set the `display` property to `block`.
+  
+## Overlapping Elements
+
+When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another
+  - must be an integer (i.e. a whole number and not a decimal)
+  - higher values for the z-index property of an element move it higher in the stack than those with lower values.
+
+
