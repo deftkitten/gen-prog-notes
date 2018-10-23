@@ -2,15 +2,42 @@
 
 ## Main Body
 
-- `<h1>`  heading
-
+- `<h1>`  heading - should only use one `<h1>` element in a page (for accessibility reasons)
 - `<p>`   paragraph
-
 - `<br>`  break line
-
 - `<!--`  comment here    `-->`
-
 - `<head>` this is NOT a header, metadata elements, such as `link`, `meta`, `title`, and `style` typically go inside the head element.
+- `<main>` - has an embedded landmark feature that assistive technology can use to quickly navigate to the main content
+- `<header>` - used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages
+  - shares the embedded landmark feature you saw with main, allowing assistive technologies to quickly navigate to that content
+- `<footer>` - has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page
+- `<nav>` - another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page
+- `<article>` - a sectioning element, and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles.
+- `<section>` - for grouping thematically related content
+- `<audio> ` - gives semantic meaning when it wraps sound or audio stream content in your markup
+  - Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing
+  - This can be done with nearby text on the page or a link to a transcript
+  - the `controls` attribute shows the browser default play, pause, and other controls, and supports keyboard functionality
+  - Example: 
+
+    ```
+    <audio id="meowClip" controls>
+      <source src="audio/meow.mp3" type="audio/mpeg" />
+      <source src="audio/meow.ogg" type="audio/ogg" />
+    </audio>
+    ```
+- `<figure>` and `<figcaption>`
+  - Example:
+
+```
+<figure>
+  <img src="roundhouseDestruction.jpeg" alt="Photo of Camper Cat executing a roundhouse kick">
+  <br>
+  <figcaption>
+    Master Camper Cat demonstrates proper form of a roundhouse kick.
+  </figcaption>
+</figure>
+```
 
 ## Sub-Elements
 
