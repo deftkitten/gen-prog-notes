@@ -48,6 +48,9 @@
   3. Not taking blame. Question: "What was a major screw-up you did, and how did you fix it?" Very few candidates mentioned anything really bad. One even started ripping on some Microsoft product that caused issues for him. The guy who had the worst screw-up ended up getting hired.
 
   4. Refusing to say "I don't know" in the technical interview. "I don't know" is always better than a way-off-the-mark answer. I can tell if you're guessing. You can make an educated guess, but if you're not presenting it as a guess, then you're not being honest, and that's a red flag."
+- "What kind of projects impress?" 
+  - Projects that you expect to use, or projects that have taken weeks or months to plan and complete, not projects taking hours or otherwise not very distinguishable from programming puzzles given at job interviews. Because projects taking weeks/months is closer to the reality of jobs.
+  - the thing that impresses me the most (with college students and industry vets alike) is contributions to open source projects
 
 # Reddit Comments
 
