@@ -246,3 +246,26 @@ when `position` is defined, such as `fixed` or `relative`, the CSS offset proper
   
 # Applied Accessibility
 
+## Make Elements Only Visible to a Screen Reader by Using Custom CSS
+
+This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. So you essentially hide the table from view.
+
+EXAMPLE:
+```
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+```
+
+\*Note: the following do NOT do the same thing: `display: none` or `visibility: hidden` hides content for everyone, including screen reader users
+
+## Improve Readability with High Contrast Text  
+
+- Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. 1:1 is the same color, 21:1 is the extreme (white on black)  
+
+- Be careful when choosing text color, close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.
