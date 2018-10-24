@@ -404,4 +404,9 @@ By default, items will appear in the same order they come in the source HTML. Th
 ### Adjust Each Item Individually: `align-self`  
 
 Allows you to adjust each item's alignment individually, instead of setting them all at once  
+
+-> accepts the same values as `align-items` and will override any value set by the `align-items` property
+
 \*Note: `float`, `clear`, and `vertical-align` do not work on flex items.
+
+# CSS Grid
