@@ -121,3 +121,55 @@ id declarations override class declarations
 |---|---|---|
 |`<strong>`|bold|font-style: bold\
 |`<hr>`|separation line|none|
+
+# Accessibility
+
+## Label Tags  
+- The `for` attribute on a label tag explicitly associates that label with the form control and is used by screen readers.
+```
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+</form>
+```  
+\*Note: The value of the `for` attribute must be the same as the value of the `id` attribute of the form control
+
+## Using `fieldset` for Radio Buttons  
+
+there's a way to semantically show the choices are part of a set.
+
+EXAMPLE:
+```
+<form>
+  <fieldset>
+    <legend>Choose one of these three items:</legend>
+    <input id="one" type="radio" name="items" value="one">
+    <label for="one">Choice One</label><br>
+    <input id="two" type="radio" name="items" value="two">
+    <label for="two">Choice Two</label><br>
+    <input id="three" type="radio" name="items" value="three">
+    <label for="three">Choice Three</label>
+  </fieldset>
+</form>
+```  
+
+__Why use fieldset?__  
+This allows each radio button to be labeled while also providing a label for the group as a whole. This is especially important where assistive technology (such as a screen reader) is being used where the association of the controls and their legend cannot be implied by visual presentation
+
+Tips:
+- The `fieldset` wrapper and `legend` tag are not necessary when the choices are self-explanatory, like a gender selection. Using a `label` with the `for` attribute for each radio button is sufficient.  
+
+## Accessible Date Picker  
+
+```
+<label for="input1">Enter a date:</label>
+<input type="date" id="input1" name="input1">
+```  
+
+## Standardize Times with `datetime` Attribute  
+
+```
+<time datetime="2013-02-13">last tuesday</time>
+```
+
+This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.  
