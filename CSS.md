@@ -313,5 +313,44 @@ Instead of using em or px to size text, you can use **viewport units** for respo
 - `vmin: 70vmin` would be 70% of the viewport's smaller dimension (height vs. width)
 - `vmax: 100vmax` would be 100% of the viewport's bigger dimension (height vs. width)
 
-# CSS Flexbox
+# CSS Flexbox  
 
+## Basis  
+
+Placing the CSS property `display: flex`; on an element allows you to use other flex properties to build a responsive page.
+
+## Using `flex-direction`
+
+`display: flex` turns elements into a flex container -> possible to align any children of that element into rows or columns  
+- Creating a row will align the children horizontally, and creating a column will align the children vertically.
+- options for `flow-direction`:
+  - `row` (this is DEFAULT)
+  - `column`
+  - `row-reverse`
+  - `column-reverse`  
+  
+  
+## Align Elements Along Main Axis Using `justify-content`  
+
+**main axis:** the direction the flex items are arranged
+
+Several options for how to space the flex items along main axis -> set `justify-content` to:
+- `center` - aligns all the flex items to the center inside the flex container
+- `flex-start` - aligns items to the start of the flex container
+- `flex-end` - aligns items to the end of the flex container
+- `space-between` - aligns items to the center of the main axis, with extra space placed between the items. The first and last items are pushed to the very edge of the flex container
+- `space-around` - similar to space-between but the first and last items are not locked to the edges of the container, the space is distributed around all the items
+
+## Align Elements Along Cross Axis Using `align-items`  
+
+This is the analogue of `justify-content`, but for the **cross axis** (axis perpendicular to main axis)  
+CSS offers the `align-items` property to align flex items along the cross axis
+- For row, it tells CSS how to push the items in the entire row up or down within the container
+- for column, how to push all the items left or right within the container
+
+Options for `align-items` are:
+- `flex-start` - aligns items to the start of the flex container (for rows -> top of container; columns -> left of container)
+- `flex-end` - aligns items to the end of the flex container. (rows -> bottom of container; columns -> right of container)
+- `center` - align items to the center
+- `stretch` - stretch the items to fill the flex container
+- `baseline` - align items to their baselines. (**Baseline** is a text concept, think of it as the line that the letters sit on)
