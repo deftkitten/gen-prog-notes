@@ -173,3 +173,25 @@ Tips:
 ```
 
 This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.  
+
+## Give Links Meaning  
+
+A screen reader option is to only hear the links available on a page. Screen readers do this by reading the link text, or what's between the anchor (a) tags. Make the clickable part of the sentence the part that's informative:
+
+"_Click here_ for our nutritional information" is different than "Click here for our _nutritional information_"
+
+EXAMPLE: `<p>Click here for <a href="">information about batteries<a href=""></p>`  
+
+## Make Links Navigatable with HTML Access Keys
+
+HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
+
+EXAMPLE: `<button accesskey="b">Important Button</button>`
+
+## Using `tabindex `  
+
+Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as div, span, and p, by placing a tabindex="0" attribute on them. 
+
+EXAMPLE: `<div tabindex="0">I need keyboard focus!</div>`  
+
+`tabindex` also enables the CSS pseudo-class `:focus` to work on the p tag.
