@@ -319,7 +319,9 @@ Instead of using em or px to size text, you can use **viewport units** for respo
 
 Placing the CSS property `display: flex`; on an element allows you to use other flex properties to build a responsive page.
 
-## Using `flex-direction`
+## Adjust Flex Containers (NOT applied to specific items)
+
+### Using `flex-direction`
 
 `display: flex` turns elements into a flex container -> possible to align any children of that element into rows or columns  
 - Creating a row will align the children horizontally, and creating a column will align the children vertically.
@@ -329,8 +331,7 @@ Placing the CSS property `display: flex`; on an element allows you to use other 
   - `row-reverse`
   - `column-reverse`  
   
-  
-## Align Elements Along Main Axis Using `justify-content`  
+### Align Elements Along Main Axis Using `justify-content`  
 
 **main axis:** the direction the flex items are arranged
 
@@ -341,7 +342,7 @@ Several options for how to space the flex items along main axis -> set `justify-
 - `space-between` - aligns items to the center of the main axis, with extra space placed between the items. The first and last items are pushed to the very edge of the flex container
 - `space-around` - similar to space-between but the first and last items are not locked to the edges of the container, the space is distributed around all the items
 
-## Align Elements Along Cross Axis Using `align-items`  
+### Align Elements Along Cross Axis Using `align-items`  
 
 This is the analogue of `justify-content`, but for the **cross axis** (axis perpendicular to main axis)  
 CSS offers the `align-items` property to align flex items along the cross axis
@@ -354,3 +355,48 @@ Options for `align-items` are:
 - `center` - align items to the center
 - `stretch` - stretch the items to fill the flex container
 - `baseline` - align items to their baselines. (**Baseline** is a text concept, think of it as the line that the letters sit on)
+
+### Wrap a Row or Column Using `flex-wrap`
+
+CSS flexbox has a feature to split a flex item into multiple rows (or columns). By default, a flex container will fit all flex items together. For example, a row will all be on one line.  
+
+Extra items move into a new row or column. The break point of where the wrapping happens depends on the size of the items and the size of the container.
+
+options for `flex-wrap`:
+- `nowrap` - this is the default setting, and does not wrap items
+- `wrap` - wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column
+- `wrap-reverse` - wraps items from bottom-to-top if they are in a row, or right-to-left if they are in a column
+
+## Affect Individual Flex Items (NOT applied to container)
+
+### Control Size of Items When Container Shrinks: `flex-shrink`  
+
+items shrink when width of parent container is smaller than combined widths of all flex items within it
+
+operates like a ratio: the higher the number, the more it will shrink compared to the other items in the container
+- For example, if one item has a `flex-shrink = 1` and other has `flex-shrink = 3`, the one with the value of 3 will shrink three times as much as the other  
+
+### Control Size of Items When Container Expands: `flex-grow`  
+
+opposite of `flex-shrink`
+
+### Set Initial Size of Item: `flex-basis`
+
+specifies the initial size of the item before CSS makes adjustments with `flex-shrink` or `flex-grow`
+
+takes usual units (px, em, %, etc.), and `auto` which sizes items based on content (if no content, will not appear)
+
+### Set Grow, Shrink, and Basis with One Line  
+
+DEFINITION: `flex: [flex-grow val] [flex-shrink val] [flex-basis val];` 
+EXAMPLE: `flex: 1 0 10px;` will set the item to `flex-grow: 1`;, `flex-shrink: 0`;, and `flex-basis: 10px;`
+DEFAULT: `flex: 0 1 auto;`
+
+### Rearrange Items: `order`  
+
+By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.
+
+### Adjust Each Item Individually: `align-self`  
+
+Allows you to adjust each item's alignment individually, instead of setting them all at once 
+\*Note: `float`, `clear`, and `vertical-align` do not work on flex items.
