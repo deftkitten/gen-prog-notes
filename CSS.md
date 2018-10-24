@@ -269,3 +269,49 @@ EXAMPLE:
 - Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. 1:1 is the same color, 21:1 is the extreme (white on black)  
 
 - Be careful when choosing text color, close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.
+
+# Responsive Web Design Principles
+
+## Using `media` query
+
+- Media Queries change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.  
+- Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. 
+
+GENERAL USE: `@media (max-width: 100px) { /* CSS Rules */ }` or `@media (min-height: 350px) { /* CSS Rules */ }`
+EXAMPLE: 
+```
+@media (max-height: 800px) {
+    p {
+      font-size: 10px;
+    }
+  }
+```
+
+## Make an Image Responsive  
+
+```
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+```
+
+- `max-width` property of 100% scales the image to fit the width of its container - image won't stretch wider than its original width
+- `block` changes the image from inline element (its default) to a block element on its own line
+- `auto` maintains original aspect ratio
+
+## Use a Retina Image for Higher Resolution Displays
+
+simplest way to make your images appear "retina" (and optimize them for retina displays) is to define their width and height values as only half of what the original file is.  
+
+## Make Typography Responsive  
+
+Instead of using em or px to size text, you can use **viewport units** for responsive typography. **Viewport units** are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element. The four viewort units are:
+- `vw: 10vw` would be 10% of the viewport's width
+- `vh: 3vh` would be 3% of the viewport's height
+- `vmin: 70vmin` would be 70% of the viewport's smaller dimension (height vs. width)
+- `vmax: 100vmax` would be 100% of the viewport's bigger dimension (height vs. width)
+
+# CSS Flexbox
+
