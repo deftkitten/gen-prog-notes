@@ -25,14 +25,20 @@ ASSIGNMENT: `<h2 class="blue-text">CatPhotoApp</h2>`
 
 ## CSS Properties
 
+FONT
 - `font-size:` 12 px  
 - `font-family: FAMILY_NAME, GENERIC_NAME;` so something like 'Helvetica; sans-serif"  
 (to import a Google font: '<link href="https://fonts.googleapis.com/css?family=FONT_NAME" rel="stylesheet" type="text/css">')
 - `font-weight` (normal, bold, bolder, lighter, [weight value 100-900, 700 is ordinary bold] )
   - inline-equivalent of bold is <strong>text</strong>
 - `font-style` (italic (inline equivalent is `<em>`)
+- `text-align` (justify, center, right, left)
+- `text-decoration` underline (inline-equivalent is `<u>`), overline, line-through (inline equivalent is `<s>`)
+  - CAN combine these, like `text-decoration: overline red wavy`
+- `text-transform`
+
+BORDER, MARGIN, & PADDING
 - `border-color`, `border-width`, `border-style` (dotted, solid, dotted solid, etc.), `border-radius` (%, px)
-- `background-color`
 - `padding` - controls the amount of space between the element's content and its border
   - `padding-top`, `padding-right`, `padding-left`, `padding-bottom`
   - `padding: 10px 20px 10px 20px;` (top right bottom left)
@@ -40,14 +46,14 @@ ASSIGNMENT: `<h2 class="blue-text">CatPhotoApp</h2>`
   - `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`
   - `margin: 10px 20px 10px 20px;` (top right bottom left)
 - `border`
-- `text-align` (justify, center, right, left)
+
+CONTAINER
+- `background-color`
 - `width` and `height` (relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element)
-- `text-decoration` underline (inline-equivalent is `<u>`), overline, line-through (inline equivalent is `<s>`)
-  - CAN combine these, like `text-decoration: overline red wavy`
 - `box-shadow` (applies to `<div>` objects), parameters are `offset-x, offset-y, blur-radius, spread-radius, color`
   - where blur-radius, spread-radius, and color are optional
 - `opacity` - 0 (transparent) to 1 (opaque)
-- `text-transform`
+- `transform-text` : table below 
 
 |Value|Result|
 |---|---|
@@ -106,13 +112,11 @@ EXAMPLE: `background: url(https://i.imgur.com/MJAkxbh.png);`
 
 ### Hex Color System  
 
-__6-DIGITS:__  
-#000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
-EXAMPLES: #FF0000 is 100% red, #00FF00 is 100% green.
+6-DIGITS: #000000 -> each set of two digits represents Red, Green, and Blue. These digits are the brightness of that color.  
+EXAMPLE: `#FF0000` is 100% red, `#00FF00` is 100% green.
 
-__3-DIGITS:__  
-#000 -> only one digit per color, so much fewer options  
-EXAMPLES: #F00 is red, #00F is blue
+3-DIGITS: #000 -> only one digit per color, so much fewer options  
+EXAMPLE: `#F00` is red, `#00F` is blue
 
 ### RGB functions
 
@@ -176,9 +180,11 @@ ASSIGMENTS:
   
 ## Overlapping Elements
 
-When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another
+The element coming later in the HTML markup will, by default, appear on the top of the other elements. 
+
+However, the `z-index` property can specify the order of how elements are stacked on top of one another
   - must be an integer (i.e. a whole number and not a decimal)
-  - higher values for the z-index property of an element move it higher in the stack than those with lower values.
+  - higher values for the z-index = higher in stack
 
 ## Animation
 
@@ -186,7 +192,7 @@ The animation properties control how the animation should behave and the @keyfra
 - animation-name
 - animation-duration  
 
-**@keyframes** is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific "frames" during the animation, with percentages ranging from 0% to 100%
+**@keyframes** specifies exactly what happens within the animation over the duration, defines specific "frames" during the animation, with percentages ranging from 0% to 100%
 
 EXAMPLE:  
 ```
@@ -204,7 +210,7 @@ EXAMPLE:
 }
 ```
 
-\*Note: #anim is simply an id reference
+\*Note: `#anim` is simply an id reference
 
 ### Fill Mode of an Animation  
 
@@ -212,7 +218,7 @@ EXAMPLE:
 
 ### Creating Movement  
 
-when `position` is defined, such as `fixed` or `relative`, the CSS offset properties `right`, `left`, `top`, and `bottom` can be used in animation rules to create movement.
+When `position` is defined, such as `fixed` or `relative`, the CSS offset properties `right`, `left`, `top`, and `bottom` can be used in animation rules to create movement.
 
 ```
 @keyframes rainbow {
@@ -334,8 +340,7 @@ Placing the CSS property `display: flex`; on an element allows you to use other 
 ### Align Elements Along Main Axis Using `justify-content`  
 
 **main axis:** the direction the flex items are arranged
-
-Several options for how to space the flex items along main axis -> set `justify-content` to:
+-> set `justify-content` to:
 - `center` - aligns all the flex items to the center inside the flex container
 - `flex-start` - aligns items to the start of the flex container
 - `flex-end` - aligns items to the end of the flex container
@@ -362,7 +367,7 @@ CSS flexbox has a feature to split a flex item into multiple rows (or columns). 
 
 Extra items move into a new row or column. The break point of where the wrapping happens depends on the size of the items and the size of the container.
 
-options for `flex-wrap`:
+-> set `flex-wrap` to:
 - `nowrap` - this is the default setting, and does not wrap items
 - `wrap` - wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column
 - `wrap-reverse` - wraps items from bottom-to-top if they are in a row, or right-to-left if they are in a column
@@ -371,9 +376,9 @@ options for `flex-wrap`:
 
 ### Control Size of Items When Container Shrinks: `flex-shrink`  
 
-items shrink when width of parent container is smaller than combined widths of all flex items within it
+Items shrink when width of parent container is smaller than combined widths of all flex items within it
 
-operates like a ratio: the higher the number, the more it will shrink compared to the other items in the container
+-> Operates like a ratio: the higher the number, the more it will shrink compared to the other items in the container
 - For example, if one item has a `flex-shrink = 1` and other has `flex-shrink = 3`, the one with the value of 3 will shrink three times as much as the other  
 
 ### Control Size of Items When Container Expands: `flex-grow`  
@@ -382,15 +387,15 @@ opposite of `flex-shrink`
 
 ### Set Initial Size of Item: `flex-basis`
 
-specifies the initial size of the item before CSS makes adjustments with `flex-shrink` or `flex-grow`
+Specifies initial size of item before CSS makes adjustments (with `flex-shrink` or `flex-grow`)
 
-takes usual units (px, em, %, etc.), and `auto` which sizes items based on content (if no content, will not appear)
+-> Takes usual units (px, em, %, etc.), and `auto` which sizes items based on content (if no content, will not appear)
 
 ### Set Grow, Shrink, and Basis with One Line  
 
-DEFINITION: `flex: [flex-grow val] [flex-shrink val] [flex-basis val];` 
-EXAMPLE: `flex: 1 0 10px;` will set the item to `flex-grow: 1`;, `flex-shrink: 0`;, and `flex-basis: 10px;`
-DEFAULT: `flex: 0 1 auto;`
+DEFINITION: `flex: [flex-grow val] [flex-shrink val] [flex-basis val];`  
+EXAMPLE: `flex: 1 0 10px;` will set the item to `flex-grow: 1`;, `flex-shrink: 0`;, and `flex-basis: 10px;`  
+DEFAULT: `flex: 0 1 auto;`  
 
 ### Rearrange Items: `order`  
 
@@ -398,5 +403,5 @@ By default, items will appear in the same order they come in the source HTML. Th
 
 ### Adjust Each Item Individually: `align-self`  
 
-Allows you to adjust each item's alignment individually, instead of setting them all at once 
+Allows you to adjust each item's alignment individually, instead of setting them all at once  
 \*Note: `float`, `clear`, and `vertical-align` do not work on flex items.
