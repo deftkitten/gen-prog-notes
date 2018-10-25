@@ -409,4 +409,111 @@ Allows you to adjust each item's alignment individually, instead of setting them
 
 \*Note: `float`, `clear`, and `vertical-align` do not work on flex items.
 
-# CSS Grid
+# CSS Grid  
+
+
+## Affect Grid Container  
+
+DEFINITION: `display: grid` -> apply to container  
+SET COLUMNS: with `grid-template-columns`  
+```
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px;
+}
+```  
+SET ROWS: with `grid-template-rows`  
+
+- can use absolute (px) and relative units (em, etc.), and:
+  - `fr` - sets the column or row to a fraction of the available space
+  - `auto` - sets the column or row to the width or height of its content automatically
+  - `%` - adjusts the column or row to the percent width of its container  
+  
+EXAMPLE: `grid-template-columns: auto 50px 10% 2fr 1fr;`
+
+Insert Gaps (optional): `grid-column-gap` and `grid-row-gap`
+- `grid-gap: [row_gap_val] [col_gap_val]` combines these two into one definition -> single value sets both
+
+## Affect Individual Grid Elements  
+
+The hypothetical horizontal and vertical lines that create the grid are referred to as lines.  
+
+Control the amount of columns an item will consume -> set `grid-column: [start_line] / [end_line];`  
+  EXAMPLE: `grid-column: 1 / 3;`  
+  
+Control the amount of rows an item will consume -> set `grid-row: [start_line] / [end_line];`
+  EXAMPLE: `grid-row: 1 / 3;`
+
+### Justify Content Within Cells  
+
+**Horizontally** 
+-> set `justify-self` to:
+- `stretch` - DEFAULT - content fills the whole width of the cell   
+- `start` - aligns the content at the left of the cell
+- `center` - aligns the content in the center of the cell
+- `end` - aligns the content at the right of the cell
+
+**Vertically** 
+-> set `align-self` (same options as `justify-self`)
+
+### Divide the Grid Into Custom Areas  
+
+group cells of your grid together into areas using `grid-template-areas` on the container  
+EXAMPLE:  
+```
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+```  
+- use a period (.) to designate an empty cell in the grid  
+
+### Assign Items to Custom Areas
+
+You can place an item in your custom area by referencing the name you gave it:
+```
+.item1 { grid-area: header; }
+```  
+
+### Assign Items to Non-Defined Areas  
+
+Create an area on the fly for an item to be placed like this: `item1 { grid-area: [horizontal_start_line] / [vertical_start_line] / [horizontal_end_line] / [vertical_end_line]; }`  
+
+EXAMPLE:
+```
+item1 { grid-area: 1/1/2/4; }
+```  
+
+### Use `repeat` Function to Quickly Define Many Columns / Rows  
+
+`grid-template-rows: repeat( [num_rows] , [row_width] );`
+EXAMPLE:  
+```
+grid-template-rows: repeat(100, 50px);
+```  
+
+Repeat _multiple_ values with the `repeat` function, and insert the function amongst other values when defining a grid structure  
+`grid-template-columns: repeat(2, 1fr 50px) 20px;` is same as `grid-template-columns: 1fr 50px 1fr 50px 20px;`
+
+
+### Limit Item Size Using `minmax`  
+
+use `minmax` in conjunction with `grid-template-columns` & `grid-template-rows` to limit the size of items when the grid container changes size  
+-> specify the acceptable size range for your item: `minmax( [min_size], [max_size] )`  
+
+EXAMPLE:
+`grid-template-columns: 100px minmax(50px, 200px);`  
+In the code above, grid-template-columns is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.  
+
+### Using `auto-fill` with `repeat` Function  
+
+This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container  
+USAGE: `grid-template-columns: repeat(auto-fill, 3px)` (will create as many 3px columns will fit)  
+
+You can also create flexible layouts when combining auto-fill with minmax: `repeat(auto-fill, minmax(60px, 1fr));`  
+
+### `auto-fit` vs `auto-fill`  
+
+When the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container  
+
+\*Note: If your container can't fit all your items on one row, it will move them down to a new one.
