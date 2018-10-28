@@ -1,4 +1,23 @@
-[this is a test](#main-body)
+# Table of Contents
+
+[**HTML Elements**](#html-elements)
+- [Main Body](#main-body)
+- [Sub-Elements](#sub-elements)
+- [Forms](#forms)
+- [Div](#div)
+- [Basic Page Structure](#basic-page-structure)
+- [ID Attribute](#id-attribute)
+- [Body Elements](#body-elements)
+
+[**Accessibility**](#accessibility)
+- [Label Tags](#label-tags)
+- [Using `fieldset` for Radio Buttons](#using-fieldset-for-radio-buttons)
+- [Accessible Date Picker](#accessible-date-picker)
+- [Standardize Times with `datetime` Attribute](#standardize-times-with-datetime-attribute)
+- [Give Links Meaning](#give-links-meaning)
+- [Make Links Navigatable with HTML Access Keys](#make-links-navigatable-with-html-access-keys)
+- [Using `tabindex`](#using-tabindex)
+
 
 # HTML Elements
 
@@ -190,7 +209,7 @@ HTML5 allows this attribute to be used on any element, but it's particularly use
 
 EXAMPLE: `<button accesskey="b">Important Button</button>`
 
-## Using `tabindex `  
+## Using `tabindex`  
 
 Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as div, span, and p, by placing a tabindex="0" attribute on them. 
 
