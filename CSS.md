@@ -517,3 +517,6 @@ You can also create flexible layouts when combining auto-fill with minmax: `repe
 When the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container  
 
 \*Note: If your container can't fit all your items on one row, it will move them down to a new one.
+
+### Using Media Queries to Reconfigure CSS Grid  
+
