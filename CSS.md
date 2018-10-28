@@ -1,5 +1,5 @@
 # Contents
-[Basic CSS](#basic-css)
+[**BASIC CSS**](#basic-css)
 - [Variables](#variables)
 - [Pseudo-Elements](#pseudo-elements)
 - [Classes](#classes)
@@ -19,7 +19,7 @@
     - [Creating Movement](#creating-movement)
     - [Animation Properties](#animation-properties)  
 
-[Applied Accessibility](#applied-accessibility)
+[**APPLIED ACCESSIBILITY**](#applied-accessibility)
   - [Make Elements Only Visible to a Screen Reader by Using Custom CSS](#make-elements-only-visible-to-a-screen-reader-by-using-custom-css)
   - [Improve Readability with High Contrast Text](#improve-readability-with-high-contrast-text) 
 [Responsive Web Design Principles](#responsive-web-design-principles)
@@ -28,7 +28,7 @@
   - [Use a Retina Image for Higher Resolution Displays](#use-a-retina-image-for-higher-resolution-displays)
   - [Make Typography Responsive](#make-typography-responsive)
 
-[CSS Flexbox](#css-flexbox)
+[**CSS FLEXBOX**](#css-flexbox)
   - [Basis](#basis)
   - [Adjust Flex Containers (NOT applied to specific items)](#adjust-flex-containers-not-applied-to-specific-items)
     - [Using `flex-direction`](#using-flex-direction)
@@ -43,7 +43,7 @@
     - [Rearrange Items: `order`](#rearrange-items-order)
     - [Adjust Each Item Individually: `align-self`](#adjust-each-item-individually-align-self)
 
-[CSS Grid](#css-grid)
+[**CSS GRID**](#css-grid)
   - [Affect Grid Container](#affect-grid-container)
   - [Affect Individual Grid Elements](#affect-individual-grid-elements)
     - [Justify Content Within Cells](#justify-content-within-cells)
