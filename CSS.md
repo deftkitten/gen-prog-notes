@@ -467,6 +467,7 @@ grid-template-areas:
   "footer footer footer";
 ```  
 - use a period (.) to designate an empty cell in the grid  
+- those names above, like header and footer, are defined using an element's `grid-area` property (i.e. `grid-area: header;`)  
 
 ### Assign Items to Custom Areas
 
@@ -508,6 +509,7 @@ In the code above, grid-template-columns is set to create two columns; the first
 ### Using `auto-fill` with `repeat` Function  
 
 This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container  
+
 USAGE: `grid-template-columns: repeat(auto-fill, 3px)` (will create as many 3px columns will fit)  
 
 You can also create flexible layouts when combining auto-fill with minmax: `repeat(auto-fill, minmax(60px, 1fr));`  
@@ -517,6 +519,3 @@ You can also create flexible layouts when combining auto-fill with minmax: `repe
 When the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container  
 
 \*Note: If your container can't fit all your items on one row, it will move them down to a new one.
-
-### Using Media Queries to Reconfigure CSS Grid  
-
